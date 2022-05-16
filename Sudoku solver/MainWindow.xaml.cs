@@ -10,8 +10,6 @@ namespace Sudoku_solver
     public partial class MainWindow : Window
     {
         public GameController control;
-        Regex values = new Regex("[0-9]");
-
 
         public MainWindow()
         {
@@ -29,7 +27,7 @@ namespace Sudoku_solver
             control.ClearTable();
         }
 
-        private void CheckValue(object sender, System.Windows.Input.KeyEventArgs e)
+        private void CheckValue(object sender, System.Windows.Input.KeyEventArgs e) //This needs to be fixed maybe a RegEx where it checks e.Key.ToString() != D[0-9]
         {
             if (e.Key.ToString() != Key.D1.ToString() && e.Key.ToString() != Key.D2.ToString() && e.Key.ToString() != Key.D3.ToString() && e.Key.ToString() != Key.D5.ToString() && e.Key.ToString() != Key.D6.ToString() && e.Key.ToString() != Key.D7.ToString() && e.Key.ToString() != Key.D8.ToString() && e.Key.ToString() != Key.D9.ToString())
             {
