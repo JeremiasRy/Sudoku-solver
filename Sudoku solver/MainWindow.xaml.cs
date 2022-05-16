@@ -1,6 +1,5 @@
-﻿using System.Windows;
-using System.Text.RegularExpressions;
-using System.Collections.Generic;
+﻿using System.Text.RegularExpressions;
+using System.Windows;
 using System.Windows.Input;
 
 namespace Sudoku_solver
@@ -12,12 +11,12 @@ namespace Sudoku_solver
     {
         public GameController control;
         Regex values = new Regex("[0-9]");
-        
+
 
         public MainWindow()
         {
             InitializeComponent();
-            control = Resources["control"] as GameController;  
+            control = Resources["control"] as GameController;
         }
 
         private void SolvePuzzle(object sender, RoutedEventArgs e)
@@ -32,7 +31,7 @@ namespace Sudoku_solver
 
         private void CheckValue(object sender, System.Windows.Input.KeyEventArgs e)
         {
-            if (e.Key.ToString() != Key.D1.ToString() && e.Key.ToString() != Key.D2.ToString() && e.Key.ToString() != Key.D3.ToString() && e.Key.ToString() != Key.D5.ToString() && e.Key.ToString() != Key.D6.ToString() && e.Key.ToString() != Key.D7.ToString() && e.Key.ToString() != Key.D8.ToString() && e.Key.ToString() != Key.D9.ToString()) 
+            if (e.Key.ToString() != Key.D1.ToString() && e.Key.ToString() != Key.D2.ToString() && e.Key.ToString() != Key.D3.ToString() && e.Key.ToString() != Key.D5.ToString() && e.Key.ToString() != Key.D6.ToString() && e.Key.ToString() != Key.D7.ToString() && e.Key.ToString() != Key.D8.ToString() && e.Key.ToString() != Key.D9.ToString())
             {
                 e.Handled = true;
             }

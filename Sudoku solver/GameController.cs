@@ -1,8 +1,7 @@
 ﻿using System;
-using System.ComponentModel;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
-using System.Threading;
 
 namespace Sudoku_solver
 {
@@ -10,7 +9,7 @@ namespace Sudoku_solver
     {
         public Dictionary<int, string> GameSquares { get; set; } = new Dictionary<int, string>();
         public string Message { get; set; }
-        
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string name)
@@ -38,7 +37,7 @@ namespace Sudoku_solver
         {
             foreach (var key in userGame.Keys)
             {
-                if(int.TryParse(userGame[key], out int resultValue))
+                if (int.TryParse(userGame[key], out int resultValue))
                 {
                     Gameboard.GameSquares.Find(x => x.Position == key).Value = resultValue;
                 }
@@ -51,7 +50,7 @@ namespace Sudoku_solver
                 {
                     square.Value = null;
                 }
-                return;     
+                return;
             }
 
             SolveMachine.SolvePuzzle(out int BranchesUsed);

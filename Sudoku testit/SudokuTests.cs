@@ -92,7 +92,7 @@ namespace Sudoku_testit
     [TestClass]
     public class SolverTests
     {
-        
+
 
         [TestInitialize]
         public void SolverInitializer()
@@ -124,7 +124,7 @@ namespace Sudoku_testit
         [TestMethod]
         public void TestReadySudoku()
         {
-            
+
 
             Gameboard.GameSquares[3].Value = 8;
 

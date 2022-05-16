@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using System.ComponentModel;
 
 namespace Sudoku_solver
 {
@@ -14,7 +13,7 @@ namespace Sudoku_solver
         /// <summary>
         /// Gets all the squares from horizontal line, vertical line and the box in where this.square is.
         /// </summary>
-        public List<Square> Box { get { return myPlaceInTheUniverse.Where(x => x.box == this.box).Where(x => x != this).ToList(); } } 
+        public List<Square> Box { get { return myPlaceInTheUniverse.Where(x => x.box == this.box).Where(x => x != this).ToList(); } }
         public List<Square> VLine { get { return myPlaceInTheUniverse.Where(x => x.vPos == this.vPos).Where(x => x != this).ToList(); } }
         public List<Square> HLine { get { return myPlaceInTheUniverse.Where(x => x.hPos == this.hPos).Where(x => x != this).ToList(); } }
 
@@ -44,7 +43,7 @@ namespace Sudoku_solver
             this.Value = value;
             myPlaceInTheUniverse = whereILive;
         }
-        
+
 
         /// <summary>
         /// Checks all the lines to see if the value already exists and then checks if it's null;

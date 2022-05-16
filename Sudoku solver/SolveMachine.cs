@@ -57,7 +57,7 @@ namespace Sudoku_solver
                 .ToList();
         }
 
- 
+
         /// <summary>
         /// Starts solving the puzzle.
         /// First it solves the "sure" values (if it only has one possible value to put) and when it encounters multiple possibilities it creates the first branches.
@@ -65,23 +65,23 @@ namespace Sudoku_solver
         /// </summary>
         static public void SolvePuzzle(out int branchesUsed)
         {
-           List<List<Square>> branches = new List<List<Square>>();
-                var squareToSolve = LeastPossibleValues(Gameboard.GameSquares).First();
-                while (squareToSolve.possiblevalues.Count() == 1)
-                {
-                    SolveRound(squareToSolve, squareToSolve.possiblevalues.First(), Gameboard.GameSquares);
-                    squareToSolve = LeastPossibleValues(Gameboard.GameSquares).First();
-                }
+            List<List<Square>> branches = new List<List<Square>>();
+            var squareToSolve = LeastPossibleValues(Gameboard.GameSquares).First();
+            while (squareToSolve.possiblevalues.Count() == 1)
+            {
+                SolveRound(squareToSolve, squareToSolve.possiblevalues.First(), Gameboard.GameSquares);
+                squareToSolve = LeastPossibleValues(Gameboard.GameSquares).First();
+            }
 
-                if (squareToSolve.possiblevalues.Count() > 1)
+            if (squareToSolve.possiblevalues.Count() > 1)
+            {
+                var possibilities = new List<int>();
+                foreach (int i in squareToSolve.possiblevalues)
                 {
-                    var possibilities = new List<int>();
-                    foreach (int i in squareToSolve.possiblevalues)
-                    {
-                        possibilities.Add(i);
-                    }
-                        branches = BranchOut(squareToSolve, possibilities, Gameboard.GameSquares);
-                    }
+                    possibilities.Add(i);
+                }
+                branches = BranchOut(squareToSolve, possibilities, Gameboard.GameSquares);
+            }
             var winningBranch = SolveBranches(branches, out int branchCount);
             branchesUsed = branchCount;
 
@@ -112,13 +112,13 @@ namespace Sudoku_solver
         /// <returns>A list of branches</returns>
         static public List<List<Square>> BranchOut(Square squareToSolve, List<int> possibilities, List<Square> fromWhereToBranch)
         {
-            var branches = new List<List<Square>>();    
+            var branches = new List<List<Square>>();
             for (int i = 0; i < possibilities.Count(); i++)
             {
                 var branch = new List<Square>();
                 branches.Add(branch);
             }
-            foreach(var branch in branches)
+            foreach (var branch in branches)
             {
                 foreach (var square in fromWhereToBranch)
                 {
@@ -142,7 +142,7 @@ namespace Sudoku_solver
         static public List<Square> AddBranch(Square squareToSolve, int value, List<Square> fromWhereToBranch)
         {
             var newBranch = new List<Square>();
-            foreach(var square in fromWhereToBranch)
+            foreach (var square in fromWhereToBranch)
             {
                 newBranch.Add(new Square(square.vPos, square.hPos, square.box, square.Value, newBranch));
             }
@@ -160,9 +160,9 @@ namespace Sudoku_solver
         static public List<Square> SolveBranches(List<List<Square>> branches, out int branchCount)
         {
             branchCount = 1;
-            while (branches.Count > 1) 
+            while (branches.Count > 1)
             {
-                
+
                 var branch = branches.First();
 
                 while (!DeadEnd(branch))
@@ -187,7 +187,7 @@ namespace Sudoku_solver
                     return branch;
                 }
                 branches.RemoveAt(0); //Remove the branch that didn't solve the puzzle.
-                
+
             }
             return new List<Square>();
 
