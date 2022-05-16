@@ -1,0 +1,131 @@
+﻿<Window x:Class="Sudoku_solver.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Sudoku_solver"
+        Title="Sudoku Solver" Height="450" Width="800">
+    <Window.Resources>
+        <local:GameController x:Key="control"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource control}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition />
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <TextBox x:Name="_11"  Grid.Row="0" Grid.Column="0" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[11], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_12"  Grid.Row="0" Grid.Column="1" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[12], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_13"  Grid.Row="0" Grid.Column="2" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[13], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_14"  Grid.Row="0" Grid.Column="3" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[14], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_15"  Grid.Row="0" Grid.Column="4" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[15], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_16"  Grid.Row="0" Grid.Column="5" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[16], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_17"  Grid.Row="0" Grid.Column="6" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[17], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_18"  Grid.Row="0" Grid.Column="7" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[18], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_19"  Grid.Row="0" Grid.Column="8" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[19], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+
+        <TextBox x:Name="_21"  Grid.Row="1" Grid.Column="0" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[21], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_22"  Grid.Row="1" Grid.Column="1" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[22], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_23"  Grid.Row="1" Grid.Column="2" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[23], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_24"  Grid.Row="1" Grid.Column="3" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[24], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_25"  Grid.Row="1" Grid.Column="4" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[25], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_26"  Grid.Row="1" Grid.Column="5" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[26], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_27"  Grid.Row="1" Grid.Column="6" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[27], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_28"  Grid.Row="1" Grid.Column="7" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[28], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_29"  Grid.Row="1" Grid.Column="8" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[29], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+
+        <TextBox x:Name="_31"  Grid.Row="2" Grid.Column="0" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[31], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_32"  Grid.Row="2" Grid.Column="1" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[32], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_33"  Grid.Row="2" Grid.Column="2" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[33], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_34"  Grid.Row="2" Grid.Column="3" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[34], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_35"  Grid.Row="2" Grid.Column="4" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[35], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_36"  Grid.Row="2" Grid.Column="5" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[36], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_37"  Grid.Row="2" Grid.Column="6" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[37], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_38"  Grid.Row="2" Grid.Column="7" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[38], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_39"  Grid.Row="2" Grid.Column="8" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[39], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+
+        <TextBox x:Name="_41"  Grid.Row="3" Grid.Column="0" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[41], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_42"  Grid.Row="3" Grid.Column="1" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[42], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_43"  Grid.Row="3" Grid.Column="2" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[43], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_44"  Grid.Row="3" Grid.Column="3" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[44], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_45"  Grid.Row="3" Grid.Column="4" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[45], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_46"  Grid.Row="3" Grid.Column="5" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[46], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_47"  Grid.Row="3" Grid.Column="6" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[47], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_48"  Grid.Row="3" Grid.Column="7" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[48], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_49"  Grid.Row="3" Grid.Column="8" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[49], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+
+        <TextBox x:Name="_51"  Grid.Row="4" Grid.Column="0" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[51], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_52"  Grid.Row="4" Grid.Column="1" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[52], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_53"  Grid.Row="4" Grid.Column="2" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[53], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_54"  Grid.Row="4" Grid.Column="3" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[54], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_55"  Grid.Row="4" Grid.Column="4" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[55], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_56"  Grid.Row="4" Grid.Column="5" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[56], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_57"  Grid.Row="4" Grid.Column="6" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[57], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_58"  Grid.Row="4" Grid.Column="7" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[58], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_59"  Grid.Row="4" Grid.Column="8" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[59], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+
+        <TextBox x:Name="_61"  Grid.Row="5" Grid.Column="0" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[61], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_62"  Grid.Row="5" Grid.Column="1" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[62], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_63"  Grid.Row="5" Grid.Column="2" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[63], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_64"  Grid.Row="5" Grid.Column="3" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[64], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_65"  Grid.Row="5" Grid.Column="4" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[65], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_66"  Grid.Row="5" Grid.Column="5" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[66], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_67"  Grid.Row="5" Grid.Column="6" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[67], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_68"  Grid.Row="5" Grid.Column="7" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[68], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_69"  Grid.Row="5" Grid.Column="8" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[69], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+
+        <TextBox x:Name="_71"  Grid.Row="6" Grid.Column="0" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[71], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_72"  Grid.Row="6" Grid.Column="1" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[72], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_73"  Grid.Row="6" Grid.Column="2" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[73], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_74"  Grid.Row="6" Grid.Column="3" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[74], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_75"  Grid.Row="6" Grid.Column="4" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[75], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_76"  Grid.Row="6" Grid.Column="5" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[76], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_77"  Grid.Row="6" Grid.Column="6" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[77], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_78"  Grid.Row="6" Grid.Column="7" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[78], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_79"  Grid.Row="6" Grid.Column="8" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[79], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+
+        <TextBox x:Name="_81"  Grid.Row="7" Grid.Column="0" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[81], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_82"  Grid.Row="7" Grid.Column="1" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[82], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_83"  Grid.Row="7" Grid.Column="2" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[83], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_84"  Grid.Row="7" Grid.Column="3" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[84], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_85"  Grid.Row="7" Grid.Column="4" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[85], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_86"  Grid.Row="7" Grid.Column="5" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[86], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_87"  Grid.Row="7" Grid.Column="6" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[87], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_88"  Grid.Row="7" Grid.Column="7" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[88], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_89"  Grid.Row="7" Grid.Column="8" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[89], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+
+        <TextBox x:Name="_91"  Grid.Row="8" Grid.Column="0" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[91], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_92"  Grid.Row="8" Grid.Column="1" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[92], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_93"  Grid.Row="8" Grid.Column="2" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[93], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_94"  Grid.Row="8" Grid.Column="3" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[94], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_95"  Grid.Row="8" Grid.Column="4" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[95], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_96"  Grid.Row="8" Grid.Column="5" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[96], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_97"  Grid.Row="8" Grid.Column="6" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[97], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_98"  Grid.Row="8" Grid.Column="7" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[98], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <TextBox x:Name="_99"  Grid.Row="8" Grid.Column="8" FontSize="32" TextAlignment="Center" Text="{Binding GameSquares[99], Mode=TwoWay}" KeyDown="CheckValue" MaxLength="1"/>
+        <Button Grid.Column="9" Content="Solve" HorizontalAlignment="Left" Margin="50,0,0,0" Grid.Row="6" Grid.RowSpan="3" VerticalAlignment="Center" Width="100" Height="100" Click="SolvePuzzle"/>
+        <Button Grid.Column="9" Content="Clear" HorizontalAlignment="Left" Margin="250, 0, 0, 0" Grid.Row="6" Grid.RowSpan="3" VerticalAlignment="Center" Width="100" Height="100" Click="Clear"/>
+        <TextBlock Grid.Column="9" HorizontalAlignment="Left" Margin="10,10,0,9" Grid.Row="5" TextWrapping="Wrap" Text="{Binding Message, Mode=OneWay}" VerticalAlignment="Center" FontSize="20"/>
+        <TextBlock Grid.Column="9" HorizontalAlignment="Center" Margin="10,10,0,0" Grid.Row="2" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Center" Text="{Binding Solving, Mode=OneWay}" FontSize="40"/>
+
+    </Grid>
+
+</Window>
