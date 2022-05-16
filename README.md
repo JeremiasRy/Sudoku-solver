@@ -17,5 +17,7 @@ the most I got was over 6000.
 
 This is not a sudoku game it's only a solver.
 
+I also tried to do a little TDD but because I was figuring out what the program was while I was making it the tests and actual code were developed hand in hand.
+
 It could also be used to create sudoku puzzles: Tell it to input random numbers to random places and look if it's possible to solve. 
 Then just return the values and the squares they were in. Difficulty could be chosen by setting the amount of numbers it inputs.
