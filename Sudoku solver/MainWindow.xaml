@@ -13,7 +13,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
-            <ColumnDefinition />
+            <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -125,6 +125,10 @@
         <Button Grid.Column="9" Content="Clear" HorizontalAlignment="Left" Margin="250, 0, 0, 0" Grid.Row="6" Grid.RowSpan="3" VerticalAlignment="Center" Width="100" Height="100" Click="Clear"/>
         <TextBlock Grid.Column="9" HorizontalAlignment="Left" Margin="10,10,0,9" Grid.Row="5" TextWrapping="Wrap" Text="{Binding Message, Mode=OneWay}" VerticalAlignment="Center" FontSize="20"/>
         <TextBlock Grid.Column="9" HorizontalAlignment="Center" Margin="10,10,0,0" Grid.Row="2" Grid.RowSpan="2" TextWrapping="Wrap" VerticalAlignment="Center" Text="{Binding Solving, Mode=OneWay}" FontSize="40"/>
+        <Border BorderBrush="Black" BorderThickness="1,0,0,0" Grid.Column="3" Grid.Row="0" Grid.RowSpan="9"/>
+        <Border BorderBrush="Black" BorderThickness="1,0,0,0" Grid.Column="6" Grid.Row="0" Grid.RowSpan="9"/>
+        <Border BorderBrush="Black" BorderThickness="0,1,0,0" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="9"/>
+        <Border BorderBrush="Black" BorderThickness="0,1,0,0" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="9"/>
 
     </Grid>
 

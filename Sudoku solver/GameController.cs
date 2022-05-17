@@ -7,9 +7,12 @@ namespace Sudoku_solver
 {
     public class GameController : INotifyPropertyChanged
     {
+        /// <summary>
+        /// Gets the user input of game board to Gameboard.GameSquares. 
+        /// Also Solver puts the GameBoard.GameSquares to this dictionary.
+        /// </summary>
         public Dictionary<int, string> GameSquares { get; set; } = new Dictionary<int, string>();
         public string Message { get; set; }
-
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string name)
@@ -57,6 +60,7 @@ namespace Sudoku_solver
 
             ChangeMessage($"Branches used to solve the puzzle: {BranchesUsed}");
             GameSquares.Clear();
+
             foreach (var square in Gameboard.GameSquares)
             {
                 GameSquares[square.Position] = square.Value.ToString();

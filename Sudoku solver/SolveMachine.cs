@@ -182,12 +182,11 @@ namespace Sudoku_solver
                         SolveRound(nextSq, nextSq.possiblevalues.First(), branch);
                     }
                 }
-                if (branch.Where(x => x.IsCorrect).Count() == 81 && branch.Where(x => x.Value == null).Count() == 0) //Check if everything is correct.. No null values and everything correct.
+                if (branch.Where(x => x.IsCorrect).Count() == 81) //Check if everything is correct
                 {
                     return branch;
                 }
                 branches.RemoveAt(0); //Remove the branch that didn't solve the puzzle.
-
             }
             return new List<Square>();
 
