@@ -12,7 +12,7 @@ namespace Sudoku_solver
         /// Also Solver puts the GameBoard.GameSquares to this dictionary.
         /// </summary>
         public Dictionary<int, string> GameSquares { get; set; } = new Dictionary<int, string>();
-        public string Message { get; set; }
+        public string Message { get; private set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged(string name)
@@ -40,9 +40,9 @@ namespace Sudoku_solver
         {
             foreach (var key in userGame.Keys)
             {
-                if (int.TryParse(userGame[key], out int resultValue))
+                if (int.TryParse(userGame[key], out int userInput))
                 {
-                    Gameboard.GameSquares.Find(x => x.Position == key).Value = resultValue;
+                    Gameboard.GameSquares.Find(x => x.Position == key).SetValue(userInput);
                 }
             }
 
@@ -51,7 +51,7 @@ namespace Sudoku_solver
                 ChangeMessage("That's impossible to solve...");
                 foreach (var square in Gameboard.GameSquares)
                 {
-                    square.Value = null;
+                    square.SetValue(null);
                 }
                 return;
             }
@@ -73,9 +73,9 @@ namespace Sudoku_solver
         {
             ChangeMessage("Cleared");
             OnPropertyChanged("Message");
+            Gameboard.ClearTable();
             foreach (var square in Gameboard.GameSquares)
             {
-                square.Value = null;
                 UpdateGameStatus(square.Position, square.Value.ToString());
             }
             OnPropertyChanged("GameSquares");

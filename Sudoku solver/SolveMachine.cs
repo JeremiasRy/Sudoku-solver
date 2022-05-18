@@ -65,6 +65,7 @@ namespace Sudoku_solver
         /// </summary>
         static public void SolvePuzzle(out int branchesUsed)
         {
+
             List<List<Square>> branches = new List<List<Square>>();
             var squareToSolve = LeastPossibleValues(Gameboard.GameSquares).First();
             while (squareToSolve.possiblevalues.Count() == 1)
@@ -87,16 +88,19 @@ namespace Sudoku_solver
 
             foreach (var square in winningBranch)
             {
-                Gameboard.GameSquares
-                    .Where(x => x.Position == square.Position)
-                    .First().Value = square.Value;
+                var SquareToSet = Gameboard.GameSquares
+                     .Where(x => x.Position == square.Position)
+                     .First();
+                SquareToSet.SetValue(square.Value);
+                SquareToSet.possiblevalues.Clear();
+
             }
             return;
         }
 
-        static public void SolveRound(Square square, int value, List<Square> listToClean)
+        static void SolveRound(Square square, int value, List<Square> listToClean)
         {
-            square.Value = value;
+            square.SetValue(value);
             foreach (var cleanSquare in listToClean) //Clean up possible values..
             {
                 cleanSquare.possiblevalues.Clear();
@@ -139,7 +143,7 @@ namespace Sudoku_solver
         /// <param name="value">Value to put in the square</param>
         /// <param name="fromWhereToBranch"> The state of the board when branch was made</param>
         /// <returns>A gamestate where program can continue solving.</returns>
-        static public List<Square> AddBranch(Square squareToSolve, int value, List<Square> fromWhereToBranch)
+        static List<Square> AddBranch(Square squareToSolve, int value, List<Square> fromWhereToBranch)
         {
             var newBranch = new List<Square>();
             foreach (var square in fromWhereToBranch)
@@ -157,7 +161,7 @@ namespace Sudoku_solver
         /// </summary>
         /// <param name="branches"> Stores all the possible branches a.k.a gameStates </param>
         /// <returns> A winning branch </returns>
-        static public List<Square> SolveBranches(List<List<Square>> branches, out int branchCount)
+        static List<Square> SolveBranches(List<List<Square>> branches, out int branchCount)
         {
             branchCount = 1;
             while (branches.Count > 1)

@@ -9,7 +9,7 @@ namespace Sudoku_solver
     /// </summary>
     public partial class MainWindow : Window
     {
-        Regex inputCheck = new Regex("^D[0-9]");
+        readonly Regex inputCheck = new Regex("^D[1-9]");
         public GameController control;
 
         public MainWindow()

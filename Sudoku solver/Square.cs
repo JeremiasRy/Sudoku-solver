@@ -9,7 +9,7 @@ namespace Sudoku_solver
         public readonly int hPos;
         public readonly int box;
 
-        List<Square> myPlaceInTheUniverse = new List<Square>(); //Tells the solver in which branch this.square lives
+        readonly List<Square> myPlaceInTheUniverse = new List<Square>(); //Tells the solver in which branch this.square lives
         /// <summary>
         /// Gets all the squares from horizontal line, vertical line and the box in where this.square is.
         /// </summary>
@@ -22,11 +22,20 @@ namespace Sudoku_solver
         /// </summary>
         public List<int> possiblevalues = new List<int>();
 
-        public int? Value { get; set; } //The actual value this square holds (can be null)
+
+        public int? Value { get; private set; } //The actual value this square holds (can be null)
         public bool HasValue => Value != null; //Checks if the square has a value
         public int Position { get { return vPos * 10 + hPos; } } //A position of the square in the game table First int vertical position second horizontal.
 
         public bool IsCorrect { get { return CorrectValue(VLine, HLine, Box, Value); } } //Checks if the value is correct
+
+        public void SetValue(int? valueToSet)
+        {
+            if (valueToSet >= 1 && valueToSet <= 9  || valueToSet == null)
+            {
+                Value = valueToSet;
+            }
+        }
 
         public Square(int vPos, int hPos, int box, List<Square> whereILive) // This is the "Main" constructor it creates the root game
         {
@@ -62,9 +71,7 @@ namespace Sudoku_solver
                 return false;
             }
             else
-            {
                 return true;
-            }
         }
     }
 }

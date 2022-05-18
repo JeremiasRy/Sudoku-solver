@@ -6,12 +6,20 @@ namespace Sudoku_solver
 {
     public static class Gameboard
     {
-        public static Random Random = new Random();
-        public const int BOARD_SIZE = 9;
-        public const int BOX_SIZE = BOARD_SIZE / 3;
+        const int BOARD_SIZE = 9;
         static public bool Completed => GameSquares.Where(x => x.IsCorrect).Count() == BOARD_SIZE * BOARD_SIZE;
 
-        public static List<Square> GameSquares { get; set; } = new List<Square>();
+        public static List<Square> GameSquares { get; private set; } = new List<Square>();
+
+        public static void ClearTable()
+        {
+            foreach (var square in GameSquares)
+            {
+                square.SetValue(null);
+                
+            }
+        }
+
 
         /// <summary>
         /// I numbered the boxes from left to right top left being 1 and bottom right is 9;
