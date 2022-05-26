@@ -38,6 +38,11 @@ namespace Sudoku_solver
 
         public void CallSolvePuzzle(Dictionary<int, string> userGame)
         {
+            if (Gameboard.Completed)
+            {
+                ChangeMessage("Solved already!");
+                return;
+            }
             foreach (var key in userGame.Keys)
             {
                 if (int.TryParse(userGame[key], out int userInput))

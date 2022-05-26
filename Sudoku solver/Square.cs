@@ -13,9 +13,9 @@ namespace Sudoku_solver
         /// <summary>
         /// Gets all the squares from horizontal line, vertical line and the box in where this.square is.
         /// </summary>
-        public List<Square> Box { get { return myPlaceInTheUniverse.Where(x => x.box == this.box).Where(x => x != this).ToList(); } }
-        public List<Square> VLine { get { return myPlaceInTheUniverse.Where(x => x.vPos == this.vPos).Where(x => x != this).ToList(); } }
-        public List<Square> HLine { get { return myPlaceInTheUniverse.Where(x => x.hPos == this.hPos).Where(x => x != this).ToList(); } }
+        public List<Square> Box { get => myPlaceInTheUniverse.Where(x => x.box == this.box).Where(x => x != this).ToList(); }
+        public List<Square> VLine { get => myPlaceInTheUniverse.Where(x => x.vPos == this.vPos).Where(x => x != this).ToList(); }
+        public List<Square> HLine { get => myPlaceInTheUniverse.Where(x => x.hPos == this.hPos).Where(x => x != this).ToList(); }
 
         /// <summary>
         /// The solver uses this List to store possible values
@@ -25,9 +25,9 @@ namespace Sudoku_solver
 
         public int? Value { get; private set; } //The actual value this square holds (can be null)
         public bool HasValue => Value != null; //Checks if the square has a value
-        public int Position { get { return vPos * 10 + hPos; } } //A position of the square in the game table First int vertical position second horizontal.
+        public int Position { get => vPos * 10 + hPos;  } //A position of the square in the game table First int vertical position second horizontal.
 
-        public bool IsCorrect { get { return CorrectValue(VLine, HLine, Box, Value); } } //Checks if the value is correct
+        public bool IsCorrect { get => CorrectValue(VLine, HLine, Box, Value); } //Checks if the value is correct
 
         public void SetValue(int? valueToSet)
         {
