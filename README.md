@@ -13,8 +13,7 @@ if it runs to a deadend it returns to the branching point and chooses the next v
 Because it always tries to get to the end of a branch first before checking other branches you can input a empty board to it and 
 it will not go through millions of possibilities.
 
-Usually this solves the sudokus in 100-500 branches but sometimes if you only enter 1-3 values in random places it can take thousands of branches.
-the most I got was over 6000.
+Usually this solves the sudokus in 100-500 branches.
 
 This is not a sudoku game it's only a solver.
 
